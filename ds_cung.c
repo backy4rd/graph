@@ -21,13 +21,13 @@ void add_edge(Graph* pG, int x, int y) {
 }
 
 int degree(Graph G, int x) {
-    int count = 0;
+    int deg = 0;
     for (int i = 0; i < G.m; i++) {
-        if (G.edges[i].u == x) count++;
-        if (G.edges[i].v == x) count++;
+        if (G.edges[i].u == x) deg++;
+        if (G.edges[i].v == x) deg++;
     }
 
-    return count;
+    return deg;
 }
 
 int adjacent(Graph G, int x, int y) {
