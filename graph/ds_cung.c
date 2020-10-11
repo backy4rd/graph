@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define MAX_M 500
 
 typedef struct {
@@ -22,7 +21,7 @@ void add_edge(Graph* pG, int x, int y) {
 
 int degree(Graph G, int x) {
     int deg = 0;
-    for (int i = 0; i < G.m; i++) {
+    for (int i = 1; i <= G.m; i++) {
         if (G.edges[i].u == x) deg++;
         if (G.edges[i].v == x) deg++;
     }
@@ -31,7 +30,7 @@ int degree(Graph G, int x) {
 }
 
 int adjacent(Graph G, int x, int y) {
-    for (int i = 0; i < G.m; i++) {
+    for (int i = 1; i <= G.m; i++) {
         if (
             (G.edges[i].u == x && G.edges[i].v == y) ||
             (G.edges[i].u == y && G.edges[i].v == x)
@@ -42,14 +41,3 @@ int adjacent(Graph G, int x, int y) {
 
     return 0;
 }
-
-void neighbours(Graph G, int x) {
-    for (int i = 0; i < G.m; i++) {
-        if (G.edges[i].u == x) {
-            printf("%d ", G.edges[i].v);
-        } else if (G.edges[i].v == x) {
-            printf("%d ", G.edges[i].u);
-        }
-    }
-}
-

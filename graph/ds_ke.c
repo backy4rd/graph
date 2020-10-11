@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define MAX_N 100
 
 typedef struct {
@@ -20,6 +19,14 @@ void push_back(List* pL, int x) {
     pL->data[pL->size] = x;
     pL->size++;
 }
+
+int element_at(List L, int p) {
+    return L.data[p - 1];
+}
+
+int size(List L) {
+    return L.size;
+}
 // -----------------------
 
 void init_graph(Graph* pG, int n) {
@@ -36,21 +43,15 @@ void add_edge(Graph* pG, int x, int y) {
 }
 
 int degree(Graph G, int x) {
-    return G.adj[x].size;
+    return size(G.adj[x]);
 }
 
 int adjacent(Graph G, int x, int y) {
-    for (int i = 0; i < G.adj[x].size; i++) {
-        if (G.adj[x].data[i] == y) {
+    for (int i = 1; i <= size(G.adj[x]); i++) {
+        if (element_at(G.adj[x], i) == y) {
             return 1;
         }
     }
 
     return 0;
-}
-
-void neighbours(Graph G, int x) {
-    for (int i = 0; i < G.adj[x].size; i++) {
-        printf("%d ", G.adj[x].data[i]);
-    }
 }
