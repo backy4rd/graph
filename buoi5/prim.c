@@ -4,8 +4,6 @@
 #define INFINITY 100000
 
 int visited[MAX_N];
-int pi[MAX_N];
-int p[MAX_N];
 
 int distance_from(int u, List list, Graph graph) {
     int min_w = INFINITY;
@@ -70,11 +68,11 @@ int main() {
 
     int total_weight = prim(G, &tree);
 
-    printf("%d"\n, total_weight);
+    printf("%d\n", total_weight);
     for (int u = 1; u <= tree.n; u++) {
         int hasLine = 0;
         for (int v = 1; v <= u; v++) {
-            if (tree.A[u][v] != 0) {
+            if (adjacent(tree, u, v)) {
                 printf("%d %d %d", v, u, tree.A[u][v]);
                 hasLine = 1;
             }
