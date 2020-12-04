@@ -21,6 +21,6 @@ int pop(Stack* stack) {
     return top;
 }
 
-int is_empty(Stack stack) {
+int is_stack_empty(Stack stack) {
     return stack.size == 0;
 }

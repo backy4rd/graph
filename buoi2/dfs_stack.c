@@ -7,7 +7,7 @@ void dfs(Graph G, int x, int visited[]) {
     make_null_stack(&stack);
     push(&stack,x);
 
-    while(!is_empty(stack)) {
+    while(!is_stack_empty(stack)) {
         int top = pop(&stack);
         if(visited[top]!=0) continue;
 
