@@ -3,11 +3,11 @@
 #include "../data_structure/stack.c"
 
 void dfs(Graph G, int x, int visited[], int parent[]) {
-	Stack stack;
-	make_null_stack(&stack);
-	push(&stack,x);
+    Stack stack;
+    make_null_stack(&stack);
+    push(&stack,x);
 
-	while(!is_stack_empty(stack)) {
+    while(!is_stack_empty(stack)) {
         int top = pop(&stack);
         if(visited[top]!=0) continue;
 

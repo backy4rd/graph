@@ -21,7 +21,7 @@ void add_edge(Graph* pG, int x, int y) {
 
 int degree(Graph G, int x) {
     int deg = 0;
-    for (int i = 1; i <= G.m; i++) {
+    for (int i = 0; i < G.m; i++) {
         if (G.edges[i].u == x) deg++;
         if (G.edges[i].v == x) deg++;
     }
