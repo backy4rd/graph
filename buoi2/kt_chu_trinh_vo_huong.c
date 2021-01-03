@@ -24,7 +24,7 @@ int is_graph_have_cycle(Graph graph) {
 
     for (int i = 1; i <= graph.n; i++) {
         if (mark[i] == 0) {
-            int cycle = is_vertex_make_cycle(graph, 1, -1, mark);
+            int cycle = is_vertex_make_cycle(graph, i, -1, mark);
             if (cycle) return 1;
         }
     }
